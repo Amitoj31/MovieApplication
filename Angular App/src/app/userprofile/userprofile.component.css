@@ -1,0 +1,152 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css");
+
+.matcard{
+
+    box-shadow: 0px 0px 10px 0px #9b9b9b,
+    0 1px 1px 0 #9b9b9b,
+    0 1px 3px 0 #9b9b9b;
+    border-radius: 25px;
+    width: auto;
+  
+    /* background-color: rgba(244, 231, 231, 0.905); */
+}
+mat-form-field
+{
+    margin-left: 20px;
+    color:white;
+    text-decoration-color: white;
+}
+ input
+{
+   font-weight: bold;
+    color:black;
+    font-style: normal;
+}
+.profile-form{
+    width: auto;
+    height: auto;
+    
+
+}
+h2{
+    margin-bottom: 30px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #339966 0%, #ff0000 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+h3{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #000099 0%, #33cc33 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}   
+
+img {
+    
+    width: 200px;
+    height: 200px;
+    /* margin:20%; */
+     /* margin-left: 570px; */
+     /* margin-right: auto; */
+    border-radius: 100%;
+    /* overflow: hidden; */
+    /* align-items: flex-start; */
+  }
+ 
+/* .profile-button{  
+    margin-left:200px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #66ff66 0%, #99ffcc 100%);
+} */
+
+.midImg {
+    text-align: center;
+}
+#profile-div{
+    width: auto;
+    margin:auto;
+   
+}
+.profile-form{
+    display: felx;
+    text-align: center;
+}
+#div{
+    padding-top: 60px;
+    margin-left:70px;
+    margin-right: 70px;
+}
+.div-all-details{
+   
+    margin: 80px;
+}
+.p-delete{
+  
+    background-color: rgb(222, 76, 76);
+}
+.div-delete{
+   padding: 15px;
+    border-radius: 20px;
+    margin-left:70px;
+    margin-right: 70px;
+    text-align: center;
+     height: auto;
+     width: auto;
+     background: linear-gradient(to bottom, #ff6699 0%, #ff3300 100%);
+    /* background-color: rgb(241, 65, 65); */
+}
+.div-delete-p{
+    background: linear-gradient(to bottom, #333300 0%, #ff0000 100%);
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+font-size: 30px;
+}
+
+.delete-div{
+    margin-top: 20px;
+    text-align: center;
+}
+.delete-danger:hover{
+    background: linear-gradient(to bottom, #ff6699 0%, #800000 100%);
+}
+.div-delete-account{
+    margin: 20px;
+}
+.cancel-danger{
+   margin-left:40px;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #00ffff 0%, #ffff00 100%);
+}
+.delete-danger{
+    margin-right:40px;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #ff0066 0%, #cc0000 100%);
+}
+/* .div-delete-account,span,button{
+    margin:30px
+} */
+
+.cancel-danger:hover{
+    background: linear-gradient(to bottom, #33cc33 0%, #ffff00 100%);
+}
+
+

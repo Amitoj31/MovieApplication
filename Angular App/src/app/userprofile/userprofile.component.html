@@ -1,0 +1,61 @@
+<div id="profile-div" class="container">  
+  <h3>Welcome  {{firstName}}</h3>
+  <div class="midImg">
+   <img [src]="profilePic" class="rounded-circle"  alt="">
+  </div>
+  
+  
+ <div id="div" >    
+   <mat-card  class="matcard" >
+            <h2>PROFILE DETAILS</h2>
+     <div class="profile-form">
+           <mat-form-field class="example-full-width" appearance="outline" >
+               <mat-label>Name</mat-label>
+               <input disabled  matInput value={{firstName}} >
+             </mat-form-field>
+
+            
+
+     
+        
+
+             <mat-form-field class="example-full-width" appearance="outline" >
+               <mat-label>Email</mat-label>
+               <input disabled  matInput value={{email}} >
+             </mat-form-field>
+
+       
+
+
+            
+
+             <mat-form-field class="example-full-width" appearance="outline" >
+               <mat-label>Age</mat-label>
+               <input disabled  matInput value={{age}} >
+             </mat-form-field>
+     </div>
+ </mat-card>
+</div>
+
+<div class="div-all-details">
+     <div class="div-delete" *ngIf="show">  
+       <!-- <mat-icon>assignment_returned</mat-icon> -->
+       <mat-icon>delete</mat-icon>
+       <p class="div-delete-p">BY Deleting the profile</p>
+       <li>they will be permanently deleted</li>
+       <li style="margin-right:32px ;">user account will be deleted</li>
+       <li style="margin-right:23px ;">they will not be able to log in</li>
+       <li style="margin-right:31px ;"> user account will be deleted</li>
+       <div class="div-delete-account" > 
+       <span >
+         <button type="button" class="delete-danger"(click)="delete()"  >DELETE</button>
+         
+         <button type="button" class="cancel-danger"(click)="cancel()"  >CANCEL</button>
+       </span>
+       </div>    
+     </div>
+     <div class="delete-div">
+       <button type="button" class="delete-danger"(click)="deleteShow()" >DELETE ACCOUNT</button> 
+     </div>
+</div>
+</div>

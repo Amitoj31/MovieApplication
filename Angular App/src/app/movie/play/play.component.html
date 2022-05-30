@@ -1,0 +1,37 @@
+<div class="display container">
+    <div class="row">
+        <div class="col-2 col-md-1">
+            <button mat-button (click)="back()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+
+
+        <div class="col-10 col-md-5">
+            <img [src]="movie.url" alt="" *ngIf="!playOn">
+            <video src="assets\Marvel Opening Theme.mp4" height="500px" width="450px" class="playVid" *ngIf="playOn" controls autoplay></video>
+        </div>
+        <div class="col-6 col-md-4">
+            <h2>{{movie.movieName}}</h2>
+            <p>
+                <img src="assets/imdb.png" alt="" height="30px" width="50px"> {{movie.rating}}/10
+            </p>
+            <p><b>Year Of Release : </b> {{movie.yearOfRelease}}</p>
+            <p><b>Genre : </b>{{movie.movieCategory}}</p>
+            <p><b>Director : </b>{{movie.movieDirector}}</p>
+            <p><b>Age View Rating : </b>{{movie.ageRating}}</p>
+            <p><b>Subtitles : </b>English</p>
+            <p><b>Audio : </b>English</p>
+            <div>
+                <button mat-raised-button (click)="play()" style="margin:3px;" color="primary" matTooltip="PLAY Movie">
+                    PLAY
+                    <mat-icon>play_circle_outline</mat-icon>
+                </button>
+                <button mat-raised-button (click)="addCheck()" style="margin:5px;" color="accent" matTooltip="Add Movie To your Favourite List">
+                    ADD TO FAVOURITE
+                    <mat-icon>add_to_queue</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

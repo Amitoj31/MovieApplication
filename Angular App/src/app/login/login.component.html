@@ -1,0 +1,77 @@
+<div class="logindiv row" >
+    <div class="col-6 align-items-center" style="justify-content: space-around;text-align: center; ">
+<p id="p-movie"> MOVIE</p>
+<p id="p1-movie"> Movie application helps to watch movie anywhere at anytime</p>
+
+</div>
+    <mat-card>
+
+        <mat-card-title>
+            LOGIN
+        </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="loginForm">
+                <mat-form-field appearance="outline">
+                    <mat-label for="email">Email</mat-label>
+                    <input matInput placeholder="Enter Your Email" type="text" formControlName="email">
+                    <div *ngIf="email.invalid && email.touched" class="errors">
+                        <div *ngIf="email.errors?.['required']">
+                            email is required
+                        </div>
+                        <div *ngIf="email.errors?.['pattern']">
+                            email is wrong
+                        </div>
+                    </div>
+                </mat-form-field>
+
+
+                <br>
+                <mat-form-field appearance="outline">
+                    <mat-label for="password">Password</mat-label>
+                    <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+                        formControlName="password" maxlength="10">
+                    <!-- <input matInput placeholder="Enter Your password" type="password" formControlName="password" maxlength="10" > -->
+                    <mat-icon matSuffix (click)="togglePasswordVisibility()">visibility</mat-icon>
+
+                    <small *ngIf="password.invalid && password.touched" class="errors">
+                        <div *ngIf="password.errors?.['required']">
+                            password is required
+                        </div>
+                        <div *ngIf="password.errors?.['minLength']">
+                            password can't be small
+                        </div>
+                    </small>
+                </mat-form-field>
+                <br>
+                <!-- <div appearance="outline"> 
+                <button type="button" mat-raised-button (click)="fileInput.click()">Choose Your Profile Picture</button>
+                <input hidden (change)="getFileData($event)" #fileInput type="file">
+                <span class="file-name">{{selectedFile?.name}}</span>   
+              </div> -->
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button class="LoginButton" [disabled]="!loginForm.valid" (click)="login()"
+                style="color:white ;">LOGIN</button>
+
+        </mat-card-actions>
+
+        <button id="create"mat-raised-button (click)="openDialog()">Create Account</button>
+        <!-- <mat-card-footer>
+            No Account? Click here to <a routerLink="/register">Register</a>
+        </mat-card-footer> -->
+    </mat-card>
+    <br>
+</div>
+
+<!-- <br>
+<input type="text" placeholder="userId" #U/>
+<input type="text" placeholder="movieId" #M/>
+<button  placeholder="submit" (click)="addFav(M.value, U.value)">getFavs</button>
+
+    <br>
+    <br>
+    <button (click)="getUser()" >Get User Data</button>
+    <div *ngIf="userData!=null">
+        {{userData|json}}
+    </div> -->

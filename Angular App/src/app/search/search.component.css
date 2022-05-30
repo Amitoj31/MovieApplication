@@ -1,0 +1,23 @@
+.movies {
+    display: inline-flex;
+    padding: 30px;
+  
+  
+}
+mat-card {
+    text-align: center;
+    background-color: rgb(194, 193, 193);
+}
+.moviesCar {
+    height: 400px;
+    width: 100%;
+    
+}
+.moviecard2
+{
+    box-sizing: border-box;
+    border:1px solid green;
+    z-index: 2;
+    position: absolute;
+    background-color: lightslategray;
+}

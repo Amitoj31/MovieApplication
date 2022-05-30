@@ -1,0 +1,26 @@
+.data 
+{
+    margin:10px;
+   text-align: center;
+}
+.display {
+    margin-left: 50px;
+    display: inline-flex;
+}
+figcaption
+{
+    /* margin-left:20%; */
+    /* padding-left: 65px; */
+}
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px;
+    align-items: flex-start;
+
+  }
+  .body{ 
+      background-color: rgb(166, 146, 28);
+  }

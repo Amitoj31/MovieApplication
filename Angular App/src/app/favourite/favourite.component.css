@@ -1,0 +1,12 @@
+.movieCard {
+    max-width: 320px;
+    max-height: 300px;
+    text-align: center;
+    margin:30px;
+    box-sizing: border-box;
+    background-color: rgb(194, 193, 193);
+}
+
+.movies {
+    display: inline-flex;
+}

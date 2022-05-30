@@ -1,0 +1,29 @@
+<div>
+    
+    <mat-card style="background-color: lightgray;margin: 50px 10px 200px;padding-top: 10px;padding-bottom: 70px;"*ngIf="favMovies[0]==null">
+        <p style="text-align: center;">Favourite List is EMPTY</p>
+        <!-- MovieName<input type="text" #I1/> <br>
+<input type="button" (click)="getAll(I1.value)"> -->
+    </mat-card>
+  
+    
+    <div *ngIf="favMovies!=null" class="favlist">
+        
+        <div *ngFor="let m of favMovies" class="movies"> 
+          
+                <mat-card class="movieCard">
+                    <img [src]="m.url" height="150" width="300"  (click)="play(m)"/>
+                    <p>{{m.movieName}}                         <button mat-button matTooltip="Delete from Favourites" class="warn" (click)="removeFromFavourite(m.movieId)"> <mat-icon>delete</mat-icon>
+                    </button>
+                </p>
+                <p>{{m.yearOfRelease}}   Ratings: <ngb-rating [rate]="m.rating" matTooltip="{{m.rating}}/10">Rating</ngb-rating></p>
+                </mat-card>
+                
+          
+        
+        </div>
+    </div>
+
+    
+</div>
+<!-- </mat-card> -->

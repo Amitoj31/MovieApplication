@@ -1,0 +1,38 @@
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor="let c of carouselMovies">
+        <div class="picsum-img-wrapper">
+            <img [src]="c.url" alt="Random first slide" height="450" width="60%" (click)="play(c)">
+        </div>
+    </ng-template>
+</ngb-carousel>
+<!-- <div class="carousel-caption">
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div> -->
+<br>
+<br>
+<app-category class="cats"></app-category>
+<br>
+<app-latestmovie class="cats"></app-latestmovie>
+<br>
+<h3 style="margin-left:50px;">All Movie Data</h3>
+<br>
+<div *ngFor="let m of movieData;let i=index" class="movies" >
+    <mat-card (mouseover)="m.show=true" style="align-items: center;">
+        <img [src]="m.url" height="200" width="360" />
+
+    </mat-card>
+    <mat-card *ngIf="m.show" class="moviecard2" (mouseout)="m.show=false" >
+        <div (click)="play(m)">
+            <video src="\assets\Marvel Opening Theme.mp4" width="360px" height="200px" controls autoplay></video>
+            <p>{{m.movieName}}</p>
+            <!-- <ngb-rating [rate]="m.rating">Rating</ngb-rating> -->
+            <button mat-icon-button color="warn" (click)="addToFav(m.movieId)" *ngIf="this.loginService.isLoggedin">
+                <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+
+</div>
+<br>
+<br><br>

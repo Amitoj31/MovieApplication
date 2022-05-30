@@ -1,0 +1,14 @@
+<h3 style="margin-left:50px;">TRENDING MOVIES</h3>
+<div *ngFor="let m of latestdata;let i=index" class="movies"> 
+    <mat-card (mouseover)="m.show=true" >
+        <img [src]="m.url" height="150" width="300"/>
+  
+    </mat-card>
+    <mat-card  *ngIf="m.show" class="moviecard2" (mouseout)="m.show=false" (click)="play(m)">
+      
+        <!-- <img [src]="m.i.imageUrl" height="130" width="180" /> -->
+        <video  src="\assets\Marvel Opening Theme.mp4" width="300px" height="130px" controls autoplay></video>
+        <p>{{m.movieName}}</p>
+    </mat-card>
+  
+  </div>

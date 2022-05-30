@@ -1,0 +1,109 @@
+<div id ="maindiv" >
+
+    
+      <mat-card class="matcard">
+    
+    <form class="example-form" [formGroup]="profileForm" >
+      <h2 class="gradient-text">REGISTER</h2>
+        <mat-form-field class="example-full-width" appearance="outline" >
+          <mat-label>FirstName</mat-label>
+          <input matInput placeholder="Enter FirstName" formControlName="firstName">
+          <small *ngIf="firstName.invalid && firstName.touched" class="errors">
+            <div *ngIf="firstName.errors?.['required']">
+              firstName is required
+            </div>
+             </small>
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>LastName</mat-label>
+            <input matInput placeholder="Enter LastName"formControlName="lastName"  >
+            <small *ngIf="lastName.invalid && lastName.touched" class="errors">
+              <div *ngIf="lastName.errors?.['required']">
+                lastName is required
+              </div>
+               </small>
+          </mat-form-field>
+  <br>
+          <mat-form-field class="example-full-width" appearance="outline" >
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter email" formControlName="email" >
+            <small *ngIf="email.invalid && email.touched" class="errors">
+              <div *ngIf="email.errors?.['required']">
+                 email is required
+              </div>
+              <div *ngIf="email.errors?.['pattern']">
+                  email is wrong
+              </div>
+          </small>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>ContactNo</mat-label>
+            <input matInput type="text"  placeholder="Enter contactNo" formControlName="contactNo" >
+            <small *ngIf="contactNo.invalid && contactNo.touched" class="errors">
+              <div *ngIf="contactNo.errors?.['required']">
+                contactNo is required
+              </div>
+               </small>
+          </mat-form-field>
+<br>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Enter password"  formControlName="password">
+            <small *ngIf="password.invalid && password.touched" class="errors">
+              <div *ngIf="password.errors?.['required']">
+                 password is required
+              </div>
+              <div *ngIf="password.errors?.['minLength']">
+                  password minlength not satisfied
+              </div>
+          </small>
+          </mat-form-field>
+  
+          <!-- <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>profilePic</mat-label>
+            <input type="file" matInput placeholder="Enter profilePic"  formControlName="profilePic">
+          </mat-form-field>
+        -->
+    
+  
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" placeholder="Enter age" formControlName="age" max="130" min="0"/>
+            <small *ngIf="age.invalid && age.touched" class="errors" >
+              <div *ngIf="age.errors?.['required']">
+                Age is required
+              </div>
+             
+          </small>
+          </mat-form-field>
+  
+          <div class="profile"appearance="outline"> 
+            <mat-icon >account_circle</mat-icon>
+            <button  id="profile-button" type="button"  mat-raised-button (click)="fileInput.click()" >Profile Pic</button>
+            <input hidden (change)="getFileData($event)" #fileInput type="file">
+            <span class="file-name">{{selectedFile?.name}}</span> 
+          </div>
+          
+          <br>
+       
+   
+      <mat-card-actions>
+        <button  class="register-button"  [disabled]="!profileForm.valid"  (click)="sendUserData()" >REGISTER</button>
+    </mat-card-actions>
+
+  </form>
+
+      <!-- <span  >
+        <a style="margin-left: 100px;" routerLink="/login">LOGIN</a>|||||||<a routerLink="" >FORGET PASSWORD</a>
+     </span> -->
+     <!-- <span class="rout-to-comp">
+         <a class="a" routerLink="/login">LOGIN</a><a class="a" routerLink="">||</a><a class="a" routerLink=""  >FORGET PASSWORD</a>
+      </span> -->
+    </mat-card>
+    
+    
+  </div>
+  
+  

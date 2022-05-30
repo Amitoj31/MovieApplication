@@ -1,0 +1,104 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+
+      >
+      <!-- [opened]="(isHandset$ | async) === false" -->
+
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list *ngIf="(isHandset$ | async) ">
+      <a mat-list-item routerLink="movie">Home</a> 
+      <div *appCheck="this.loginService.isLoggedin">      <a mat-list-item routerLink="favourite">Favourites</a></div>
+
+      <!-- <a mat-list-item routerLink="home">Link 3</a> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  
+    <mat-toolbar class="mattoolbar"color="primary">
+      <!-- <span>movieApp</span>
+       -->
+       <img src="assets\M.jfif" alt="" height="50" width="50" style="border-radius:50%">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+      
+        <mat-icon aria-label="Side nav toggle icon">arrow_drop_down</mat-icon>
+      </button>
+
+      <a class="navA" *ngIf="!(isHandset$ | async) " mat-list-item routerLink="movie">HOME</a> 
+      <div *appCheck="this.loginService.isLoggedin">
+      <a class="navA" *ngIf="!(isHandset$ | async) " mat-list-item  routerLink="favourite">FAVOURITE</a>
+      <a class="navA" *ngIf="!(isHandset$ | async) " mat-list-item routerLink="userprofile">PROFILE</a>
+    </div>
+      <a class="navA" *ngIf="!(isHandset$ | async) " mat-list-item routerLink="latestmovie">TRENDING</a>
+      <!-- <a class="navA" *ngIf="!(isHandset$ | async) " mat-list-item routerLink="favourite">PROFILE</a> -->
+      <span class="example-spacer"></span>
+
+      <!-- <div class="input-group " style="margin-right: 50px"> -->
+        <mat-form-field  appearance="standard" class="search-hover"  >
+          <input matInput  type="search" placeholder="Search  (moviename/year)"
+          id="example-search-input" #S1 style="color: white;"[matAutocomplete]="auto"/>
+           <mat-icon style="color:white;"  (click)="search(S1.value)" routerLink="/search">search</mat-icon>
+          </mat-form-field>
+
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of storemoive" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+      <!-- </div> -->
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
+        <mat-icon *appCheck="!this.loginService.isLoggedin" matTooltip="User Menu">perm_identity</mat-icon>
+        <img [src]="this.loginService.userData.profilePic" *appCheck="this.loginService.isLoggedin" height="30px" width="30px" style="border-radius:50%"> 
+        <mat-icon matTooltip="User Menu">arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="menu">
+        <!-- <mat-icon>login</mat-icon> -->
+        <a class="navA1" mat-menu-item *appCheck="!this.loginService.isLoggedin" routerLink="/login">Login </a>
+
+        <a class="navA1" mat-menu-item *appCheck="this.loginService.isLoggedin" routerLink="/userprofile">User Profile</a>
+        <a class="navA1" mat-menu-item *appCheck="this.loginService.isLoggedin" (click)="logout()" href="#">Logout</a>
+
+
+      </mat-menu>
+     
+    </mat-toolbar>
+    <!-- <app-home></app-home> -->
+
+    <!-- <app-movie></app-movie> -->
+    <!-- <app-login></app-login> -->
+<!-- <app-register></app-register> -->
+ 
+<router-outlet></router-outlet>
+<div id="foot" >
+  <div class="leftF"  style="float:left;">
+  <div >
+    <a href="">About</a>
+    <a href="#">Terms of use</a>
+    <a href="">Privacy Policy</a>
+    <a href="">FAQ </a>
+    <a href="">Feedback</a>
+    Connect With Us:
+    <a href="#" height="30px" width="10px" style="border-radius: 50%;">
+      <mat-icon>facebook</mat-icon>
+    </a>
+    <a href="#" height="30px" width="10px" style="border-radius: 50%;">
+      <mat-icon>snapchat</mat-icon>
+    </a>
+  </div>
+  <div style="text-align: center;width: 100%;padding-left: 40px;">
+    <p style="font-size: x-small;">
+      © 2022. All Rights Reserved. NIIT, All related channel and programming logos are service marks of, and all
+      related programming visuals and elements are the property of, NIIT, Inc. All rights reserved.
+    </p>
+  </div>
+</div>
+</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

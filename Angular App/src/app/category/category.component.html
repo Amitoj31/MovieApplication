@@ -1,0 +1,9 @@
+<h3 style="margin-left:50px;">CATEGORIES</h3>
+<div *ngFor="let item of items" class="display">
+  <div class="data">
+        <img src={{item.url}} width="20px" height="20px" routerLink="/selected" (click)="onselect(item.figcaption)">
+
+
+    <figcaption  (click)="onselect(item.figcaption)"  routerLink="/selected">{{item.figcaption}}</figcaption>
+  </div>
+</div>
